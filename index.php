@@ -1,4 +1,7 @@
 <?php
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+
 require_once __DIR__ . '/lang.php';
 $i18n = load_translations();
 $langs = available_languages();
@@ -34,6 +37,35 @@ $error = $_GET['error'] ?? null;
 </header>
 
 <main class="container">
+  <section class="explain">
+    <h2><?= htmlspecialchars(t($i18n, 'explain_heading')) ?></h2>
+    <p><?= htmlspecialchars(t($i18n, 'explain_p1')) ?></p>
+    <p><?= htmlspecialchars(t($i18n, 'explain_p2')) ?></p>
+    <p><?= htmlspecialchars(t($i18n, 'explain_p3')) ?></p>
+    <p class="formula-note"><?= htmlspecialchars(t($i18n, 'formula_note')) ?></p>
+  </section>
+
+  <?php if ($error === 'invalid'): ?>
+    <div class="alert"><?= htmlspecialchars(t($i18n, 'error_invalid')) ?></div>
+  <?php endif; ?>
+
+  <form action="submit.php" method="post" class="entry-form">
+    <label for="participants"><?= htmlspecialchars(t($i18n, 'label_participants')) ?></label>
+    <input type="number" min="1" step="1" name="participants" id="participants" required>
+
+    <label for="problems"><?= htmlspecialchars(t($i18n, 'label_problems')) ?></label>
+    <input type="number" min="0" step="1" name="problems" id="problems" required>
+
+    <label for="nice_things"><?= htmlspecialchars(t($i18n, 'label_nice_things')) ?></label>
+    <input type="number" min="1" step="1" name="nice_things" id="nice_things" required>
+
+    <button type="submit"><?= htmlspecialchars(t($i18n, 'submit_button')) ?></button>
+  </form>
+</main>
+
+<script src="assets/script.js"></script>
+</body>
+</html>
   <section class="explain">
     <h2><?= htmlspecialchars(t($i18n, 'explain_heading')) ?></h2>
     <p><?= htmlspecialchars(t($i18n, 'explain_p1')) ?></p>
