@@ -1,0 +1,13 @@
+<?php
+// Kopiere diese Datei zu config.local.php und trage deine echten Zugangsdaten ein.
+// config.local.php wird von .gitignore ausgeschlossen und landet NICHT auf GitHub.
+
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'weltproblem_score');
+define('DB_USER', 'db_user');
+define('DB_PASS', 'db_password');
+
+define('SINN_DES_LEBENS', 42);
+define('MAX_ENTRIES', 500);
+define('ENTRIES_PER_PAGE', 25);
+define('MAX_PAGES', 20);

@@ -1,0 +1,189 @@
+:root {
+    --bg: #0f1115;
+    --card: #1a1d24;
+    --text: #e8e8ea;
+    --muted: #9a9ca3;
+    --accent: #6c8cff;
+    --good: #3ecf8e;
+    --bad: #ef5b5b;
+    --border: #2a2e37;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+}
+
+.topbar h1 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.topbar .subtitle {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 2px;
+}
+
+.topbar nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-right: 1rem;
+    padding-bottom: 4px;
+}
+
+.topbar nav a.active,
+.topbar nav a:hover {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+.lang-switch select {
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.3rem 0.5rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+.formula-note {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.explain {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    max-width: 620px;
+}
+
+.explain h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.explain p {
+    color: var(--text);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.explain .formula-note {
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.entry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 420px;
+}
+
+.entry-form label {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: 0.5rem;
+}
+
+.entry-form input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.6rem 0.7rem;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.entry-form button {
+    margin-top: 1.2rem;
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.entry-form button:hover {
+    opacity: 0.9;
+}
+
+.alert {
+    background: rgba(239, 91, 91, 0.15);
+    border: 1px solid var(--bad);
+    color: var(--bad);
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.results-table th,
+.results-table td {
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+.results-table th {
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.row-meaning td:nth-child(6) { color: var(--good); }
+.row-problems td:nth-child(6) { color: var(--bad); }
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    color: var(--muted);
+}
+
+.pagination a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.pagination a.disabled {
+    color: var(--muted);
+    pointer-events: none;
+}
